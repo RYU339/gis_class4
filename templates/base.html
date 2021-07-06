@@ -2,14 +2,19 @@
 <html lang="en">
 
 {% include 'head.html' %}
+{# 외부에서 가져오는 건 head에 넣기 #}
 
 <body>
 
 {% include 'header.html' %}
 
-{% block content %} #content라는 블럭 선언
+<hr>
+
+{% block content %}
+{#    content라는 블럭 선언#}
 {% endblock %}
 
+<hr>
 
 {% include 'footer.html' %}
 
