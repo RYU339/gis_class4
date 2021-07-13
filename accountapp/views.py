@@ -15,8 +15,10 @@ def hello_world(request):
         new_model.text = temp
         new_model.save() #여기에 저장
 
+        data_list = NewModel.objects.all()
         return render(request, 'accountapp/hello_world.html',
-                      context={'new_model':new_model})
+                      context={'new_model' : data_list})
     else:
+        data_list = NewModel.objects.all()
         return render(request, 'accountapp/hello_world.html',
-                      context={'text':'GET METHOD!'})
+                      context={'new_model' : data_list})
