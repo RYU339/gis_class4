@@ -19,6 +19,11 @@
         </span>                          {# 여기까지 보여주고 #}
         {% else %}                       {# 아니라면 여기서부터 #}
         <span>
+            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                MyPage
+            </a>
+        </span>
+        <span>
             <a href="{% url 'accountapp:logout' %}">
                 Logout
             </a>
