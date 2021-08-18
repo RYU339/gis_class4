@@ -9,5 +9,8 @@ class Project(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.name}'
+
     # model 바꾸면 마이그레이션
     # model-forms-views순서로 작성
