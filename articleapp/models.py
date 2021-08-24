@@ -16,3 +16,6 @@ class Article(models.Model):
     content = models.TextField(null=True)
 
     created_at = models.DateField(auto_now_add=True, null=True)
+
+    like = models.IntegerField(default=0)
+    # IntegerField: 범주형 필드, default = 0: 초기값 0
