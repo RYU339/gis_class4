@@ -1,44 +1,48 @@
 <div style="text-align: center;">
     <div class="pragmatic_header_logo">
     {#  2rem: 상하, 0: 좌우 여백#}
-        <h1>Pragmatic</h1>
+        <h1>
+            <a href="{% url 'home' %}">
+                Pragmatic
+            </a>
+        </h1>
     </div>
     <div class="pragmatic_header_button">
-        <span>
+        <span class="mx-2">
             <a href="{% url 'articleapp:list' %}">
                 Articles
             </a>
         </span>
-        <span>
+        <span class="mx-2">
             <a href="{% url 'projectapp:list' %}">
                 Projects
             </a>
         </span>
     {% if user.is_authenticated %}
-        <span>
+        <span class="mx-2">
             <a href="{% url 'subscribeapp:list' %}">
                 Subscription
             </a>
         </span>
     {% endif %}
         {% if not user.is_authenticated %}  {# 로그인을 하지 않았다면 이 부분부터 #}
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:login' %}">
                 Login
             </a>
         </span>
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:create' %}">
                 Sign Up
             </a>
         </span>                          {# 여기까지 보여주고 #}
         {% else %}                       {# 아니라면 여기서부터 #}
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:detail' pk=user.pk %}">
                 MyPage
             </a>
         </span>
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:logout' %}">
                 Logout
             </a>
